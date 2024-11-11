@@ -105,9 +105,6 @@ PUT /api/posts/{id} - Atualiza um post existente
 DELETE /api/posts/{id} - Deleta um post
 Todos os endpoints estão protegidos e requerem autenticação via Azure B2C.
 
-Contribuindo
-Contribuições são bem-vindas! Por favor, faça um fork deste repositório e abra um Pull Request com suas melhorias.
-
 Licença
 Este projeto é licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
 
