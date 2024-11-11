@@ -1,5 +1,6 @@
 BlogAPI - Backend para Gerenciamento de Posts
 Este projeto é um backend para um sistema de gerenciamento de posts de blog, utilizando .NET 6, Entity Framework Core, e PostgreSQL como banco de dados. A autenticação é gerenciada através do Azure Active Directory B2C.
+Uso somente para teste técnico
 
 Tecnologias Utilizadas
 .NET 6 - Framework para construir APIs web.
