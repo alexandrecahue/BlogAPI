@@ -23,31 +23,27 @@ PostgreSQL: Instalar aqui
 Azure Active Directory B2C: Documentação para configuração
 Instalação e Execução
 1. Clone o Repositório
-bash
-Copiar código
+
 git clone https://github.com/seuusuario/BlogAPI.git
 cd BlogAPI
 2. Configuração do Banco de Dados (PostgreSQL)
 Criar banco de dados PostgreSQL:
 
 Use o psql ou outro cliente PostgreSQL para criar o banco de dados:
-sql
-Copiar código
+
 CREATE DATABASE blogdb;
 Atualizar appsettings.json:
 
 No arquivo BlogAPI/appsettings.json, insira as credenciais e o nome do banco de dados:
-json
-Copiar código
+
 "ConnectionStrings": {
   "DefaultConnection": "Host=localhost;Database=blogdb;Username=seu_usuario;Password=sua_senha"
 }
+
 3. Configuração do Azure B2C
-Configuração do Azure AD B2C:
 Siga a documentação do Azure para criar e configurar seu tenant Azure B2C.
 Adicione as configurações de autenticação no arquivo appsettings.json:
-json
-Copiar código
+
 "AzureAdB2C": {
   "Instance": "https://login.microsoftonline.com/",
   "ClientId": "SEU_CLIENT_ID",
@@ -57,48 +53,26 @@ Copiar código
   "EditProfilePolicyId": "B2C_1_profileediting",
   "CallbackPath": "/signin-oidc"
 }
+
 4. Aplicar Migrations e Iniciar a API
 Restaurar Dependências:
 
 No diretório raiz do projeto BlogAPI, execute o seguinte comando para restaurar as dependências do projeto:
-bash
-Copiar código
+
 dotnet restore
 Aplicar Migrations:
 
 Aplique as migrations para criar as tabelas no banco de dados:
-bash
-Copiar código
+
 dotnet ef database update
 Rodar a Aplicação:
 
 Execute o servidor localmente:
 
-bash
-Copiar código
+
 dotnet run
 A API estará disponível em https://localhost:5001.
 
-Testes
-Rodando Testes Unitários
-Para rodar os testes unitários, utilize o comando:
-
-bash
-Copiar código
-dotnet test
-Docker (Opcional)
-Você pode rodar a aplicação usando Docker se preferir:
-
-Build da Imagem Docker:
-
-bash
-Copiar código
-docker build -t blogapi .
-Rodar o Container:
-
-bash
-Copiar código
-docker run -p 5000:80 blogapi
 Endpoints
 A API possui os seguintes endpoints:
 
