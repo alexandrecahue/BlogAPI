@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\bin",
+    "\\bin\\Debug",
+    "\\bin\\Release",
+    "\\src",
+    "\\src\\controllers",
+    "\\src\\entities"
+  ],
+  "SelectedNode": "\\src\\controllers\\PostController.cs",
+  "PreviewInSolutionExplorer": false
+}

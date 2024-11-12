@@ -4,7 +4,7 @@ using BlogAPI.Migrations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogAPI.Controllers
+namespace BlogAPI.src.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -21,7 +21,7 @@ namespace BlogAPI.Controllers
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
             var posts = await _context.Posts
-                                       .OrderByDescending(p => p.CreatedAt)
+                                       .OrderByDescending(p => p.CriadoEm)
                                        .ToListAsync();
             return Ok(posts);
         }
@@ -49,8 +49,8 @@ namespace BlogAPI.Controllers
                 return Unauthorized();
             }
 
-            post.UserId = int.Parse(userId); 
-            post.CreatedAt = DateTime.UtcNow;
+            post.IdDoUsuario = int.Parse(userId); 
+            post.CriadoEm = DateTime.UtcNow;
 
             _context.Posts.Add(post);
             await _context.SaveChangesAsync();
@@ -75,14 +75,14 @@ namespace BlogAPI.Controllers
             }
 
             var userId = User.FindFirst("sub")?.Value; 
-            if (existingPost.UserId.ToString() != userId)
+            if (existingPost.IdDoUsuario.ToString() != userId)
             {
                 return Unauthorized();
             }
 
-            existingPost.Title = post.Title;
-            existingPost.Content = post.Content;
-            existingPost.CreatedAt = DateTime.UtcNow;
+            existingPost.TituloDoPost = post.TituloDoPost;
+            existingPost.ConteudoDoPost = post.ConteudoDoPost;
+            existingPost.CriadoEm = DateTime.UtcNow;
 
             _context.Entry(existingPost).State = EntityState.Modified;
             await _context.SaveChangesAsync();
@@ -103,7 +103,7 @@ namespace BlogAPI.Controllers
 
           
             var userId = User.FindFirst("sub")?.Value; 
-            if (post.UserId.ToString() != userId)
+            if (post.IdDoUsuario.ToString() != userId)
             {
                 return Unauthorized();
             }

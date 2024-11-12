@@ -1,4 +1,8 @@
+using BlogAPI.src.entities;
 using Microsoft.EntityFrameworkCore;
+
+namespace BlogAPI.src.entities;
+
 
 public class BlogContext : DbContext
 {
