@@ -5,22 +5,26 @@ A autenticação é gerenciada através do Azure Active Directory B2C.
 Uso somente para teste técnico
 
 Tecnologias Utilizadas
+
 .NET 6 - Framework para construir APIs web.
 Entity Framework Core 6 - ORM para gerenciar o banco de dados relacional.
 PostgreSQL - Banco de dados relacional utilizado.
 Azure Active Directory B2C - Serviço para autenticação de usuários.
+
 Dependências
 .NET SDK: 6.0.400
 Entity Framework Core: 6.0.0
 Npgsql.EntityFrameworkCore.PostgreSQL: 6.0.3
 Microsoft.AspNetCore.Authentication.AzureADB2C.UI: 6.0.11
 Microsoft.Identity.Web: 1.25.8
+
 Pré-requisitos
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-.NET 6 SDK: Instalar aqui
-PostgreSQL: Instalar aqui
-Azure Active Directory B2C: Documentação para configuração
+.NET 6 SDK:
+PostgreSQL:
+Azure Active Directory B2C:
+
 Instalação e Execução
 1. Clone o Repositório
 
@@ -60,11 +64,13 @@ Restaurar Dependências:
 No diretório raiz do projeto BlogAPI, execute o seguinte comando para restaurar as dependências do projeto:
 
 dotnet restore
+
 Aplicar Migrations:
 
 Aplique as migrations para criar as tabelas no banco de dados:
 
 dotnet ef database update
+
 Rodar a Aplicação:
 
 Execute o servidor localmente:
